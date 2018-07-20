@@ -85,7 +85,7 @@ def auth_hash(req, verify=False):
         )
 
 
-def auth_login(req, **kwargs):
+def auth_login(req):
     from sirepo import server
 
     if cfg.auth_secret:
@@ -104,7 +104,6 @@ def auth_login(req, **kwargs):
     return pkcollections.Dict(
         status='OK',
         data=simulation_db.open_json_file(sim_type, sid=sid),
-        **kwargs
     )
 
 
